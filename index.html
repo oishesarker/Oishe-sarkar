@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oishe Sarkar — Crop Science &amp; Technology Researcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --bg:        #FBFAF6;
+    --bg-alt:    #F3EFE6;
+    --ink:       #242420;
+    --ink-soft:  #5C5C52;
+    --forest:    #1E3328;
+    --forest-2:  #2C4736;
+    --sage:      #6E7F60;
+    --ochre:     #B8892E;
+    --line:      #DCD6C6;
+    --line-dark: #3C5744;
+    --serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  *{ box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{ color:var(--forest); }
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--ochre); outline-offset:3px; }
+
+  .wrap{
+    max-width:900px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---------- NAV ---------- */
+  header.site-nav{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(251,250,246,0.94);
+    border-bottom:1px solid var(--line);
+    backdrop-filter:blur(6px);
+  }
+  .nav-row{
+    max-width:900px;
+    margin:0 auto;
+    padding:16px 28px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+  }
+  .nav-mark{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.05rem;
+    color:var(--forest);
+    white-space:nowrap;
+    text-decoration:none;
+  }
+  nav.links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:4px 18px;
+    justify-content:flex-end;
+  }
+  nav.links a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    font-size:0.92rem;
+    padding:4px 2px;
+    border-bottom:1px solid transparent;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  nav.links a:hover{ color:var(--forest); border-color:var(--ochre); }
+
+  /* ---------- SECTION SCAFFOLDING ---------- */
+  section{
+    padding:76px 0;
+    border-bottom:1px solid var(--line);
+    scroll-margin-top:70px;
+  }
+  section:last-of-type{ border-bottom:none; }
+
+  .kicker{
+    font-family:var(--sans);
+    font-size:0.82rem;
+    letter-spacing:0.02em;
+    color:var(--ochre);
+    font-weight:600;
+    margin:0 0 10px 0;
+  }
+  h2.section-title{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.9rem;
+    color:var(--forest);
+    margin:0 0 34px 0;
+  }
+  h3.entry-title{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.2rem;
+    color:var(--ink);
+    margin:0 0 4px 0;
+  }
+  p{ margin:0 0 1em 0; max-width:66ch; color:var(--ink); }
+  .muted{ color:var(--ink-soft); }
+
+  /* ---------- HERO ---------- */
+  section.hero{
+    padding-top:88px;
+    padding-bottom:64px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:48px;
+    align-items:center;
+  }
+  .hero-eyebrow{
+    font-size:0.88rem;
+    color:var(--sage);
+    margin:0 0 14px 0;
+    font-weight:500;
+  }
+  h1.hero-name{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:clamp(2.4rem, 5.5vw, 3.6rem);
+    line-height:1.05;
+    margin:0 0 12px 0;
+    color:var(--forest);
+  }
+  p.hero-role{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:1.2rem;
+    color:var(--forest-2);
+    margin:0 0 18px 0;
+  }
+  p.hero-loc{
+    font-size:0.95rem;
+    color:var(--ink-soft);
+    margin:0;
+  }
+  .avatar{
+    width:132px;
+    height:132px;
+    border-radius:50%;
+    background:var(--forest);
+    color:var(--bg);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:var(--serif);
+    font-size:2.4rem;
+    font-weight:600;
+    border:3px solid var(--ochre);
+    flex-shrink:0;
+  }
+  @media (max-width:640px){
+    .hero-grid{ grid-template-columns:1fr; text-align:left; }
+    .avatar{ order:-1; width:96px; height:96px; font-size:1.9rem; }
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:48px;
+  }
+  .tag-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .tag-list li{
+    border:1px solid var(--line);
+    border-left:3px solid var(--ochre);
+    padding:9px 14px;
+    font-size:0.92rem;
+    color:var(--ink);
+    background:var(--bg-alt);
+  }
+  @media (max-width:680px){ .about-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- EDUCATION ---------- */
+  .edu-entry{
+    display:grid;
+    grid-template-columns:120px 1fr;
+    gap:24px;
+    padding:20px 0;
+    border-top:1px solid var(--line);
+  }
+  .edu-entry:first-of-type{ border-top:none; }
+  .edu-year{
+    font-family:var(--serif);
+    color:var(--sage);
+    font-size:0.95rem;
+    padding-top:2px;
+  }
+  .edu-stats{
+    display:flex;
+    gap:22px;
+    margin-top:10px;
+    flex-wrap:wrap;
+  }
+  .edu-stat .num{
+    font-family:var(--serif);
+    font-size:1.3rem;
+    color:var(--forest);
+    font-weight:600;
+    display:block;
+  }
+  .edu-stat .lbl{
+    font-size:0.8rem;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- PUBLICATION (citation style) ---------- */
+  .citation{
+    border-left:3px solid var(--forest);
+    padding:4px 0 4px 20px;
+  }
+  .citation p{ margin:0 0 6px 0; }
+  .citation .status{
+    display:inline-block;
+    margin-top:8px;
+    font-size:0.82rem;
+    color:var(--ochre);
+    font-weight:600;
+  }
+
+  /* ---------- SKILLS ---------- */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:32px 48px;
+  }
+  .skill-block h4{
+    font-family:var(--sans);
+    font-size:0.85rem;
+    color:var(--sage);
+    margin:0 0 8px 0;
+    font-weight:600;
+  }
+  .skill-block p{ margin:0; color:var(--ink); font-size:0.96rem; }
+  @media (max-width:680px){ .skills-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- TIMELINE (experience) ---------- */
+  .timeline{
+    position:relative;
+    padding-left:26px;
+    border-left:2px solid var(--line);
+  }
+  .timeline-item{ position:relative; padding-bottom:34px; }
+  .timeline-item:last-child{ padding-bottom:0; }
+  .timeline-item::before{
+    content:"";
+    position:absolute;
+    left:-32px;
+    top:5px;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:var(--ochre);
+  }
+  .timeline-item .when{
+    font-size:0.82rem;
+    color:var(--sage);
+    margin:0 0 4px 0;
+  }
+
+  /* ---------- ACHIEVEMENTS ---------- */
+  .achv-sub{
+    font-family:var(--sans);
+    font-size:0.85rem;
+    color:var(--sage);
+    font-weight:600;
+    margin:32px 0 14px 0;
+  }
+  .achv-sub:first-of-type{ margin-top:0; }
+  ul.plain{ margin:0; padding:0 0 0 20px; }
+  ul.plain li{ margin-bottom:10px; max-width:66ch; }
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:36px;
+  }
+  .contact-item .lbl{
+    font-size:0.8rem;
+    color:var(--sage);
+    display:block;
+    margin-bottom:4px;
+  }
+  .contact-item a, .contact-item span{
+    font-family:var(--serif);
+    font-size:1.05rem;
+    color:var(--ink);
+    text-decoration:none;
+  }
+  .contact-item a:hover{ color:var(--forest); border-bottom:1px solid var(--ochre); }
+
+  footer{
+    padding:30px 0 50px 0;
+    text-align:left;
+  }
+  footer p{
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    margin:0;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-row">
+    <a class="nav-mark" href="#home">Oishe Sarkar</a>
+    <nav class="links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HOME -->
+  <section id="home" class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="hero-eyebrow">Crop Science and Technology · University of Rajshahi</p>
+        <h1 class="hero-name">Oishe Sarkar</h1>
+        <p class="hero-role">MSc Researcher, Crop Science &amp; Technology</p>
+        <p class="hero-loc">Rajshahi, Bangladesh</p>
+      </div>
+      <div class="avatar" aria-hidden="true">OS</div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap about-grid">
+      <div>
+        <p class="kicker">About</p>
+        <h2 class="section-title">Background</h2>
+        <p>I am passionate about crop improvement and yield stability in agriculture, with a particular focus on hydroponics and precision horticulture. I am seeking to advance research in modern agricultural technologies while developing innovative solutions for food security and sustainable agriculture.</p>
+      </div>
+      <div>
+        <p class="kicker">Research interests</p>
+        <ul class="tag-list">
+          <li>LED lighting in agriculture</li>
+          <li>Hydroponics</li>
+          <li>Sustainable agriculture</li>
+          <li>Biotechnology in horticulture</li>
+          <li>Precision agriculture</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="wrap">
+      <p class="kicker">Education</p>
+      <h2 class="section-title">Academic record</h2>
+
+      <div class="edu-entry">
+        <div class="edu-year">2026&ndash;present</div>
+        <div>
+          <h3 class="entry-title">MSc, Crop Science and Technology</h3>
+          <p class="muted">University of Rajshahi &middot; Ongoing</p>
+        </div>
+      </div>
+
+      <div class="edu-entry">
+        <div class="edu-year">2020&ndash;21</div>
+        <div>
+          <h3 class="entry-title">BSc. Ag. (Honours), Crop Science and Technology</h3>
+          <p class="muted">Major: Horticulture &middot; University of Rajshahi</p>
+          <div class="edu-stats">
+            <div class="edu-stat"><span class="num">3.25</span><span class="lbl">CGPA</span></div>
+            <div class="edu-stat"><span class="num">2020&ndash;21</span><span class="lbl">Session</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <div class="wrap">
+      <p class="kicker">Research</p>
+      <h2 class="section-title">Focus areas &amp; tools</h2>
+      <p>My work sits at the intersection of controlled-environment agriculture and field-level crop production &mdash; from optimizing light spectra and nutrient delivery in hydroponic systems, to studying farmer adoption and yield outcomes under real-world conditions in Bangladesh.</p>
+      <div class="skills-grid" style="margin-top:34px;">
+        <div class="skill-block">
+          <h4>Research tools &amp; techniques</h4>
+          <p>SPSS, R programming, Python, ArcGIS</p>
+        </div>
+        <div class="skill-block">
+          <h4>Laboratory skills</h4>
+          <p>Identifying pathogens from diseased organisms</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <div class="wrap">
+      <p class="kicker">Publications</p>
+      <h2 class="section-title">Published work</h2>
+      <div class="citation">
+        <p><strong>Hybrid Seed Adoption and Farmers&rsquo; Perceptions of Traditional Seed Varieties in Northwestern Bangladesh</strong></p>
+        <p class="muted">Sarkar, O., Mokarroma, M.*, Jahan, U.T., Islam, M.S., Mrittika, N.S., Ferdous, M.J., Rani, J., Rahman, M.M.</p>
+        <p class="muted">Journal of Agricultural Extension Management</p>
+        <a href="https://lnkd.in/g9WcCZ_6" target="_blank" rel="noopener">View publication &middot; DOI link</a>
+        <span class="status">Published, 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap">
+      <p class="kicker">Skills</p>
+      <h2 class="section-title">Capabilities</h2>
+      <div class="skills-grid">
+        <div class="skill-block">
+          <h4>Research</h4>
+          <p>Data analysis, documentation, manuscript writing, peer review</p>
+        </div>
+        <div class="skill-block">
+          <h4>Software</h4>
+          <p>SPSS, ArcGIS</p>
+        </div>
+        <div class="skill-block">
+          <h4>Programming</h4>
+          <p>R, Python</p>
+        </div>
+        <div class="skill-block">
+          <h4>Laboratory</h4>
+          <p>Identifying pathogens from diseased organisms</p>
+        </div>
+      </div>
+
+      <p class="achv-sub">Training &amp; certifications</p>
+      <div class="citation">
+        <p><strong>Online SPSS and ArcGIS Training</strong></p>
+        <p class="muted">International Leadership Competition, organized by Youth Skill Development Institute Trust (YSDI). Developed six soft skills: leadership, communication, problem-solving, teamwork, critical thinking, and time management.</p>
+        <p class="muted">15 April &ndash; 31 May, 2025</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="wrap">
+      <p class="kicker">Experience</p>
+      <h2 class="section-title">Professional &amp; work experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <p class="when">August 2026 &ndash; Present</p>
+          <h3 class="entry-title">Education and Research Secretary</h3>
+          <p class="muted">Rajshahi University Higher Education and Research Forum</p>
+          <p>Promoting research and education by organizing research methodology programs and seminars, and guiding research teams.</p>
+        </div>
+        <div class="timeline-item">
+          <p class="when">1 July 2025 &ndash; Present</p>
+          <h3 class="entry-title">Research Assistant</h3>
+          <p class="muted">Institute of Natural Resources Research and Development (INRRD), Rajshahi&ndash;6206, Bangladesh</p>
+        </div>
+        <div class="timeline-item">
+          <p class="when">Prior experience</p>
+          <h3 class="entry-title">Intern, Naba Crop Care Limited</h3>
+          <p class="muted">Nabil Group of Industries</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section id="leadership">
+    <div class="wrap">
+      <p class="kicker">Leadership</p>
+      <h2 class="section-title">Leadership &amp; activities</h2>
+      <h3 class="entry-title">Education and Research Secretary</h3>
+      <p class="muted" style="margin-bottom:10px;">Rajshahi University Higher Education and Research Forum &middot; August 2026 &ndash; Present</p>
+      <p>Responsible for spreading research and education across the forum.</p>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements">
+    <div class="wrap">
+      <p class="kicker">Achievements</p>
+      <h2 class="section-title">Awards, conferences &amp; engagement</h2>
+
+      <p class="achv-sub">Awards &amp; achievements</p>
+      <ul class="plain">
+        <li><strong>Best Presenter Award</strong> &mdash; for outstanding presentation skills and academic excellence in the Research Methodology Course (21st Batch), Research and Publication Program, Institute of Natural Resources Research and Development (INRRD), Rajshahi, Bangladesh.</li>
+        <li><strong>3rd Position</strong>, Advanced English Proficiency and Research Methodology Mastery Course &mdash; Institute of Natural Resources Research and Development, under Professor Dr. Md. Yeamin Hossain, Department of Fisheries, University of Rajshahi (27 February 2025).</li>
+      </ul>
+
+      <p class="achv-sub">Conferences &amp; presentations</p>
+      <div class="citation">
+        <p><strong>7th International Conference on Gastronomy, Nutrition and Dietetics</strong>, Istanbul, T&uuml;rkiye</p>
+        <p class="muted">Presentation: &ldquo;Yield responses of tomato (<em>Solanum lycopersicum</em> L.) to irrigation and fertilizer management under farmer-managed conditions in Bangladesh&rdquo;</p>
+        <p class="muted">23&ndash;25 December 2025 &middot; Role: Presenter</p>
+      </div>
+
+      <p class="achv-sub">Seminar attendance</p>
+      <ul class="plain">
+        <li>Rajshahi University Higher Education &amp; Research Forum (RUHERF) Summit, 17 August 2025 &mdash; on shaping the future through research and global education.</li>
+        <li>RURS First International Student Conference &amp; Research Fair, organized by Rajshahi University Research Society (RURS), 10 February 2025 &mdash; on research and innovation, presented by researchers and scientists.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <p class="kicker">Contact</p>
+      <h2 class="section-title">Get in touch</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <span class="lbl">Email</span>
+          <a href="mailto:oishesarker815@gmail.com">oishesarker815@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="lbl">Phone</span>
+          <span>01307761842</span>
+        </div>
+        <div class="contact-item">
+          <span class="lbl">LinkedIn</span>
+          <a href="https://www.linkedin.com/in/oishe-sarkar-570233378" target="_blank" rel="noopener">linkedin.com/in/oishe-sarkar</a>
+        </div>
+        <div class="contact-item">
+          <span class="lbl">Location</span>
+          <span>Rajshahi, Bangladesh</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 Oishe Sarkar &middot; Crop Science and Technology, University of Rajshahi</p>
+  </div>
+</footer>
+
+</body>
+</html>
